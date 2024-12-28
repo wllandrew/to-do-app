@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/util/botoes.dart';
 
+// ignore: must_be_immutable
 class AdicionarTarefa extends StatelessWidget {
   
   // Atributos requeridos
@@ -23,12 +24,12 @@ class AdicionarTarefa extends StatelessWidget {
 
       // Conteúdo
       content: Padding(
-        padding: const EdgeInsets.all(6),
+        padding: const EdgeInsets.all(5),
         child: Container(
 
             // Tamanho da janela
             height: MediaQuery.sizeOf(context).height / 3,
-            width: MediaQuery.sizeOf(context).width - 20,
+            width: MediaQuery.sizeOf(context).width - 10,
 
             // Disposição dos elementos da janela
             child: Center(

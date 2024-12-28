@@ -42,6 +42,12 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     });
   }
 
+  void deletarTarefa(int index) {
+    setState(() {
+      tarefas.removeAt(index);
+    });
+  }
+
   void caixaDeInsercao() {
     // Método para mostrar a caixa de diálogo alerta
     showDialog(
@@ -85,6 +91,9 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 complecao: tarefas[i][1],
                 onChanged: (value) {
                   checkBoxMudar(value, i);
+                },
+                deletar: (context) {
+                  deletarTarefa(i);
                 },
               );
             }),
