@@ -1,31 +1,70 @@
 import 'package:flutter/material.dart';
 
-class ListaPedaco extends StatelessWidget {
-  
-  final String nomeTarefa;
-  final bool complecao;
+// ignore: must_be_immutable
+class PedacoLista extends StatelessWidget {
+  final String nome;
+  final bool? complecao;
   Function(bool?)? onChanged;
 
-  ListaPedaco({super.key, required this.nomeTarefa, required this.complecao, required this.onChanged});
+  PedacoLista({super.key, required this.nome , this.complecao, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.all(10),
-        child: Container(
-            padding: EdgeInsets.all(15),
-            decoration: BoxDecoration(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(15)),
-            child: Row(
-              children: [
-                Checkbox(
+    return Container(
+
+        // Margem
+        padding: EdgeInsets.all(15),
+
+        // Aparência
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(15),
+        ),
+
+        // Widget descendente:
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+
+          // Elementos:
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 0, 15, 0),
+
+              // Caixa de seleção
+              child: Transform.scale(
+                scale: 1.5,
+                child: Checkbox(
+                
+                  // Checkbox variáveis
                   value: complecao, 
-                  onChanged: onChanged
+                  onChanged: onChanged,
+
+                  // Checkbox style
+                  activeColor: Colors.white,
+                  checkColor: Colors.blue,
+                  side: BorderSide(
+                    color: Colors.white,
+                    width: 2
+                  )
+                
                 ),
-                Text(nomeTarefa,
-                    style: TextStyle(color: Colors.white, fontSize: 25))
-              ],
-            )));
+              ),
+            ),
+            Expanded(
+
+              // Texto do elementoS
+              child: Text(
+
+                  // Texto variável
+                  nome,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    decoration: complecao! ? TextDecoration.lineThrough : TextDecoration.none
+                  ),
+              ),
+            ),
+          ],
+        ));
   }
 }

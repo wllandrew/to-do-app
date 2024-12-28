@@ -13,11 +13,16 @@ class ToDoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+        // Definições de aparência
         debugShowCheckedModeBanner: false,
+
+        // Definições de navegação
         initialRoute: "/",
         routes: {
-          "/": (context) => const TelaInicial(),
+          "/": (context) => const TelaPrincipal(),
         }
+
     );
   }
 }
