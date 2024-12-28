@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_app/pages/adicionar.dart';
-import 'package:to_do_app/pages/lista.dart';
+import 'package:to_do_app/pages/adicionar_tarefa.dart';
+import 'package:to_do_app/pages/pedaco_lista.dart';
 
 class TelaPrincipal extends StatefulWidget {
   const TelaPrincipal({super.key});
