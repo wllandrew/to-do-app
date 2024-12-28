@@ -1,16 +1,5 @@
-# to_do_app
+### Aplicativo simples de gerenciamento de tarefas
 
-A new Flutter project.
+  Proposta de interface de um aplicativo para o gerenciamento de tarefas, incluindo as operações de criar, deletar, nomear e mudar o estado das tarefas.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  Foram utilizadas a linguagem de programação Dart e seu framework para desenvolvimento multiplataforma Flutter.
