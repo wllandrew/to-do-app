@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/pages/adicionar.dart';
 import 'package:to_do_app/pages/lista.dart';
 
 class TelaPrincipal extends StatefulWidget {
@@ -11,6 +12,8 @@ class TelaPrincipal extends StatefulWidget {
 class _TelaPrincipalState extends State<TelaPrincipal> {
   /// Variáveis da classe
 
+  final _controlador = TextEditingController();
+
   List<List> tarefas = [
     ["Exemplo", false]
   ];
@@ -18,18 +21,46 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
   // Métodos
 
   void checkBoxMudar(bool? value, int i) {
+    // Método para mudar o valor da tarefa
     setState(() {
       tarefas[i][1] = !tarefas[i][1];
     });
+  }
+
+  void addTarefa() {
+    setState(() {
+      tarefas.add([_controlador.text, false]);
+      _controlador.clear();
+    });
+    Navigator.of(context).pop();
+  }
+
+  void cancelarAdicao() {
+    Navigator.of(context).pop();
+    setState(() {
+      _controlador.clear();
+    });
+  }
+
+  void caixaDeInsercao() {
+    // Método para mostrar a caixa de diálogo alerta
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AdicionarTarefa(
+            controlador: _controlador,
+            salvar: addTarefa,
+            cancelar: cancelarAdicao,
+          );
+        });
   }
 
   /// Builder do widget TelaPrincipal
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-        // Cor de fundo do scaffold
-      backgroundColor: const Color.fromARGB(255, 123, 212, 253),
+      // Cor de fundo do scaffold
+      backgroundColor: Colors.white,
 
       appBar: AppBar(
         // Título do appbar
@@ -43,7 +74,6 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
 
       // Corpo do Scaffold
       body: Padding(
-        
         // Margem entre a página e os elementos
         padding: const EdgeInsets.all(20.0),
         child: ListView.builder(
@@ -63,7 +93,9 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
       // Botão flutuante para adição de tarefas
       floatingActionButton: FloatingActionButton.extended(
         // Ação do botão
-        onPressed: () {},
+        onPressed: () {
+          caixaDeInsercao();
+        },
 
         // Icones e texto
         label: Text(
