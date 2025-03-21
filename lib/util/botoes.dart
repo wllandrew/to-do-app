@@ -46,7 +46,7 @@ class Botoes extends StatelessWidget {
               ),
               Text(
                 titulo,
-                style: TextStyle(color: corSecundaria, fontSize: 20),
+                style: TextStyle(color: corSecundaria, fontSize: 17),
               ),
             ],
           ),

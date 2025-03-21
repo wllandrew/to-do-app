@@ -25,8 +25,7 @@ class AdicionarTarefa extends StatelessWidget {
       // Conteúdo
       content: Padding(
         padding: const EdgeInsets.all(5),
-        child: Container(
-
+        child: SizedBox(
             // Tamanho da janela
             height: MediaQuery.sizeOf(context).height / 3,
             width: MediaQuery.sizeOf(context).width - 10,
